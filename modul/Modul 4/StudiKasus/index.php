@@ -10,6 +10,13 @@
     background: #ddd; 
   } 
   </style>
+	<script language="JavaScript">
+      function konfirmasi(Keterangan) {
+        tanya = confirm('Anda yakin ingin menghapus mahasiswa dengan NIM '+ Keterangan + ' ?');
+        if (tanya == true) return true;
+        else return false;
+      }
+      </script>
 	  
 </head> 
  
