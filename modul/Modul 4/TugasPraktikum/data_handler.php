@@ -54,7 +54,7 @@ function data_handler($root){
 }
 
 function show_admin_data($root){ ?>
-	<h2 class="heading"> Administrasi Data</h2>
+	<h2 class="heading">SELAMAT DATANG di HALAMAN USER</h2>
 	<?php
 	$sql = 'SELECT nim, nama, alamat FROM mahasiswa';
 	$res = mysql_query($sql);
@@ -63,16 +63,12 @@ function show_admin_data($root){ ?>
 		if($num){
 			?>
 			<div class="tabel">
-				<div style="padding:5px;">
-				<a href="<?php echo $root; ?>&amp;act=add">Tambah Data</a>
-				</div>
-				<table border=1 width=700 cellpadding=4 cellspacing=0>
+					<table border=1 width=700 cellpadding=4 cellspacing=0>
 					<tr>
 						<th>#</th>
 						<th width=120>NIM</th>
 						<th width=200>Nama</th>
 						<th width=200>Alamat</th>
-						<th>Menu</th>
 					</tr>
 					<?php
 					$i=1;
@@ -86,12 +82,6 @@ function show_admin_data($root){ ?>
 							</td>
 							<td><?php echo $row[1];?></td>
 							<td><?php echo $row[2];?></td>
-							<td align="center">
-								|<a href ="<?php echo $root;?>&amp;act=edit&amp;id=<?php echo $id;?>">
-								Edit</a> | 
-								|<a href ="<?php echo $root;?>&amp;act=del&amp;id=<?php echo $id;?>" onclick="return konfirmasi('<?php echo $row[0]; ?> user name <?php echo $row[1]; ?>')"> 
-								Hapus</a>|
-							</td>
 						</tr>
 						<?php
 						$i++;

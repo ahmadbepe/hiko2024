@@ -6,8 +6,10 @@ defined('_VALID') or die ('not_allowed');
 
 function init_login() {
 	//Simulasi data account nama dan password
-	$nama = 'admin';
-	$pass = 'admin';
+	$nama = 'user';
+	$pass = 'user';
+	$admin = 'admin';
+	$passadmin ='admin';
 	
 	if(isset($_POST['nama'])&& isset($_POST['pass'])) {
 		$n = trim($_POST['nama']);
@@ -23,8 +25,19 @@ function init_login() {
 		document.location.href="./";
 		</script>
 		<?php
+		}else if(($n===$admin) && ($p===$passadmin)) {
+		$_SESSION['nlogin']=$n;
+		$_SESSION['time'] = time();
+		
+		//redireksi
+		?>
+		<script type="text/javascript">
+		document.location.href="./halamanadmin.php";
+		</script>
+		<?php
+		
 		}else{
-			echo 'Nama/Password Tidak Sesuai';
+			echo 'Maaf, Nama atau Password yang anda masukkan Tidak Sesuai';
 			return false;
 		}
 	}
@@ -55,7 +68,7 @@ function validate() {
 	}
 	
 	if(isset($_GET['m']) && $_GET['m'] == 'logout') {
-	//Hapus session
+	//Hapus Session
 	if(isset($_SESSION['nlogin'])) {
 		unset($_SESSION['nlogin']);
 	}

@@ -12,9 +12,9 @@ function data_handler($root){
 					if(isset($_GET['id']) && ctype_digit($_GET['id'])){
 						data_editor($root, $_GET['id']);
 					}else{
-					show_admin_data($root);
+						show_admin_data($root);
 					}
-					break;
+				break;
 				case 'view':
 					if(isset($_GET['id']) && ctype_digit($_GET['id'])){
 						data_detail($root, $_GET['id'], 1);
@@ -29,7 +29,7 @@ function data_handler($root){
 						$res = mysql_query($delete);
 						if($res){
 							?>
-							<script type="text/javascript">
+								<script type="text/javascript">
 								document.location.href="<?php echo $root;?>";
 								</script>
 							<?php
@@ -64,7 +64,7 @@ function show_admin_data($root){ ?>
 			?>
 			<div class="tabel">
 				<div style="padding:5px;">
-				<a href="<?php echo $root; ?>&amp;act=add">Tambah Data</a>
+					<a href="<?php echo $root; ?>&amp;act=add">Tambah Data</a>
 				</div>
 				<table border=1 width=700 cellpadding=4 cellspacing=0>
 					<tr>
@@ -89,18 +89,18 @@ function show_admin_data($root){ ?>
 							<td align="center">
 								|<a href ="<?php echo $root;?>&amp;act=edit&amp;id=<?php echo $id;?>">
 								Edit</a> | 
-								|<a href ="<?php echo $root;?>&amp;act=del&amp;id=<?php echo $id;?>" onclick="return konfirmasi('<?php echo $row[0]; ?> user name <?php echo $row[1]; ?>')"> 
+								|<a href ="<?php echo $root;?>&amp;act=del&amp;id=<?php echo $id;?>"> 
 								Hapus</a>|
 							</td>
 						</tr>
 						<?php
 						$i++;
 					}
-				?>
+					?>
 				</table>
 			</div>
-		<?php
-		}else{
+        <?php
+        }else{
 			echo 'Belum ada data, isi <a href="' . $root.'&amp;act=add">di sini</a>';
 		}
 		@mysql_close();
@@ -215,5 +215,5 @@ function data_editor($root, $id = 0){
 		<?php
 	}
 	return false;
-}
+}	
 ?>

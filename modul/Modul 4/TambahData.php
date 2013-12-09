@@ -44,7 +44,7 @@ if (isset($_POST['nim']) && isset($_POST['nama'])) {
   $res = mysql_query($sql); 
   if ($res) { 
     echo 'Data Berhasil Ditambahkan'; 
-    mysql_close($res); 
+    @mysql_close($res); 
   } else { 
     echo 'Gagal Menambah Data <br />'; 
     echo mysql_error(); 

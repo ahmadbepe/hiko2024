@@ -3,19 +3,11 @@
 <head> 
 	<title>Akses dan Manipulasi Data</title> 
 	<style type="text/css"> 
-		.even { 
+	.even { 
 		background: #ddd; 
 	} 
 	</style>
-	<script language="JavaScript">
-		function konfirmasi(iduser) {
-			tanya = confirm('Apakah anda ingin menghapus data dengan id '+ iduser + ' ?');
-			if (tanya == true) 
-				return true;
-			else 
-				return false;
-	}
-	</script>
+  
 </head> 
  
 <body> 

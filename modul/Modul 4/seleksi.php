@@ -41,7 +41,7 @@ if ($res) {
   } else { 
     echo 'Data Tidak Ditemukan'; 
   } 
-  mysql_close($res); 
+  @mysql_close($res); 
 } 
  
 ?>
